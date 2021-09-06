@@ -3,7 +3,9 @@ USE Subqueries
 
 ---1. Write a query to find the names (first_name, last_name) and salaries of the employees who have higher salary than the employee whose last_name='Bull'. 
 
-SELECT FirstName+' '+Lastname as Name, salary FROM Employees WHERE Salary>(SELECT Salary FROM Employees WHERE Lastname='bull')
+SELECT FirstName+' '+Lastname as Name, salary 
+FROM Employees 
+	WHERE Salary>(SELECT Salary FROM Employees WHERE Lastname='bull')
 
 
 ---2. Find the names (first_name, last_name) of all employees who works in the IT department. 
@@ -145,3 +147,22 @@ DECLARE @NthNumber AS INT
 SET @NthNumber=2
 
 SELECT Salary FROM (SELECT SALARY, DENSE_RANK() OVER(ORDER BY Salary DESC) AS sal FROM Employees) temp WHERE sal=@NthNumber
+
+
+SELECT * FROM Employee1
+
+SELECT * FROM Incentives
+
+----1. Select employee details from employee table if data exists in incentive table ?
+
+SELECT * 
+FROM Employee1
+	WHERE Employee_Id IN (SELECT Employee_ref_Id FROM Incentives)
+
+
+----2. Find Salary of the employee whose salary is more than Roy Salary
+
+SELECT First_Name+' '+Last_Name AS Name,Salary
+FROM Employee1
+	WHERE Salary>(SELECT Salary FROM Employee1 WHERE First_Name='Roy')
+
