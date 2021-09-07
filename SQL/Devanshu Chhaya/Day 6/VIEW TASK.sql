@@ -130,10 +130,35 @@ SELECT * FROM DeparmentsManager
 
 ----- 9. Write a query to display the department name, manager name, and city. 
 
+
 ----- 10. Write a query to display the job title and average salary of employees. 
 
-SELECT JobId, AVG(Salary)
+CREATE VIEW AverageSal
+AS
+SELECT JobId, AVG(Salary) Average_Sal
 	FROM Employees 
 	GROUP BY JobId
+
+SELECT * FROM AverageSal
+
+----- 11. Display job title, employee name, and the difference between salary of the employee and minimum salary for the job. 
+
+CREATE VIEW Salary
+AS
+SELECT JobID,FirstName, SALARY = Salary-(SELECT MIN(Salary) FROM Employees E1  WHERE E1.JobId=E2.JobId GROUP BY JobId)
+FROM Employees E2
+
+SELECT * FROM Salary
+
+
+---12. Write a query to display the job history that were done by any employee who is currently drawing more than 10000 of salary. 
+
+CREATE VIEW JobHistoryView
+AS
+SELECT j.*
+FROM Employees e JOIN JobHistory j ON e.EmployeeID=j.EmployeeID
+WHERE e.Salary>10000
+
+SELECT * FROM JobHistoryView
 
 
