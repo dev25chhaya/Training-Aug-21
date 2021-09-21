@@ -4,8 +4,8 @@ you decide to create a clustered index. But instead of using SSMS, you decide to
 to perform this task. Therefore, you create a new PlanetsID database using the following
 commands within SMMS:
 IF EXISTS (SELECT * FROM sys.objects
-WHERE object_id = OBJECT_ID(N’[dbo] . [PlanetsID]
-AND type in (N’U’))
+WHERE object_id = OBJECT_ID(Nâ€™[dbo] . [PlanetsID]
+AND type in (Nâ€™Uâ€™))
 
 USE AdventureWorks2008
 DROP TABLE [dbo].[PlanetsID]
