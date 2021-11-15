@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <title>Junagadh</title>
+    <style>
+        /* Color of the links BEFORE scroll */
+        .navbar-scroll .nav-link,
+        .navbar-scroll .navbar-toggler-icon {
+            color: #fff;
+        }
+
+        /* Color of the links AFTER scroll */
+        .navbar-scrolled .nav-link,
+        .navbar-scrolled .navbar-toggler-icon {
+            color: #4f4f4f;
+        }
+
+        /* Color of the navbar AFTER scroll */
+        .navbar-scrolled {
+            background-color: #fff;
+        }
+
+        /* An optional height of the navbar AFTER scroll */
+        .navbar.navbar-scroll.navbar-scrolled {
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+    </style>
+</head>
+
+<body onload="getdata()">
+
+    <div>
+        <img src="assests/jndmain.jpeg" alt="image" style="height:700px; width: 100%;">
+        
+    </div>
+
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark" style="height: 80px;">
+        <div class="container">
+            <a class="navbar-brand" href="#">StaySafe</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse"></div>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                <ul class="navbar-nav me-auto ">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Hotels</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Offers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"></a>
+                    </li>
+                </ul>
+                <div class="d-felx">
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#registerModal">
+                        Become Member
+                    </button>
+                    <button class="btn btn-primary ms-2">
+                        LogIn
+                    </button>
+                </div>
+            </div>
+    </nav>
+
+    <div class="container mt-5" id="hotelcard">
+        <h3>Our Hotel</h3>
+    </div>
+    <div class="container mt-5" id="maindiv">
+
+    </div>
+
+    <script>
+        function getdata(){
+            var city= JSON.parse(localStorage.getItem("CityList"))
+
+                var name= document.createTextNode(city[2].City)
+                var about= document.createTextNode(city[2].AboutCity)
+                var reach= document.createTextNode(city[2].HowToReach)
+                var time= document.createTextNode(city[2].TimetoVisit)
+                
+
+                var div= document.getElementById("maindiv")
+
+                var title=document.createElement("h3")
+                title.appendChild(name)
+
+                div.appendChild(title)
+
+                var abt= document.createElement("div")
+                abt.setAttribute("class","lead mt-3")
+                abt.appendChild(about)
+
+                div.appendChild(abt)
+
+                var visitTitle= document.createTextNode("Best time to visit")
+                var Visits=document.createElement("div")
+                Visits.setAttribute("class","h3 mt-5")
+                Visits.appendChild(visitTitle);
+                div.appendChild(Visits);
+
+                var timetovisit= document.createElement("div")
+                timetovisit.setAttribute("class","lead mt-3")
+                timetovisit.appendChild(time)
+
+                div.appendChild(timetovisit)
+
+                var reacht= document.createTextNode("How to reach")
+                var reachdiv=document.createElement("div")
+                reachdiv.setAttribute("class","h3 mt-5")
+                reachdiv.appendChild(reacht);
+                
+                div.appendChild(reachdiv);
+
+                var howtoreach= document.createElement("div")
+                howtoreach.setAttribute("class","lead mt-3")
+                howtoreach.appendChild(reach);
+
+                div.appendChild(howtoreach)        
+        
+            }
+            var hotels = JSON.parse(localStorage.getItem("hotels"));
+        $(document).ready(function(){
+                $("#hotelcard").append(
+                    `<div class="card mb-3" style="width: 1000px;">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                
+                                        
+                                <img src="assests/`+ hotels[2].City + `ho.jpg" class="img-fluid rounded-start" style="width:350px" alt="...">
+                                
+                                </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">`+hotels[2].Hotel+`</h5>
+                                <p class="card-text text-muted">`+hotels[2].Address+`</p>
+                                <br>
+                                <p class="card-text"><small class="text-muted">Check In:`+hotels[2].In+`PM and Check Out: `+hotels[2].Out+`</small></p>
+                                <br>
+                                <p class="card-text"><small class="text-muted">Distance From: RailwayStation: `+hotels[2].Airport+`KM | Bustation: `+hotels[2].Bus+`KM | RailwayStation: `+hotels[2].Rail+`</small> </p>
+                                <p class="card-text">`+hotels[2].Disc+`</p>
+                                <p class="card-text"><small class="text-muted">Check In:`+hotels[2].In+`PM and Check Out: `+hotels[2].Out+`</small></p>
+                                <div class="d-grid gap-2 d-md-flex justify-content-center">
+                                    <a class="btn btn-secondary">Book Now</a>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                `)
+            
+        })
+    </script>
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>
