@@ -1,0 +1,51 @@
+<table class="table me-3">
+    <thead>
+        <tr>
+            <th class="scope">StudentId</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Average</th>
+            <th>Grade</th>
+            <th>Active</th>
+        </tr>
+    </thead>
+    <tbody [ngSwitch]="Student.Grade" *ngFor="let Student of students">
+        <ng-container *ngIf="Student.Active">
+            <tr *ngSwitchCase="'A'" [ngStyle]="{'background-color': 'red','fontWeight': 'bold'}">
+                <td>{{Student.StudentId}}</td>
+                <td>{{Student.Name}}</td>
+                <td>{{Student.Age}}</td>
+                <td>{{Student.Average}}</td>
+                <td>{{Student.Grade}}</td>
+                <td>{{Student.Active}}</td>
+            </tr>
+            <tr *ngSwitchCase="'B'" [ngStyle]="{'background-color': 'green','fontWeight': 'bold'}">
+                <td>{{Student.StudentId}}</td>
+                <td>{{Student.Name}}</td>
+                <td>{{Student.Age}}</td>
+                <td>{{Student.Average}}</td>
+                <td>{{Student.Grade}}</td>
+                <td>{{Student.Active}}</td>
+            </tr>
+            <tr *ngSwitchCase="'C'" [ngStyle]="{'background-color': 'skyblue','fontWeight': 'bold'}">
+                <td>{{Student.StudentId}}</td>
+                <td>{{Student.Name}}</td>
+                <td>{{Student.Age}}</td>
+                <td>{{Student.Average}}</td>
+                <td>{{Student.Grade}}</td>
+                <td>{{Student.Active}}</td>
+            </tr>
+            <tr *ngSwitchCase="'D'" [ngStyle]="{'background-color': 'yellow','fontWeight': 'bold'}">
+                <td>{{Student.StudentId}}</td>
+                <td>{{Student.Name}}</td>
+                <td>{{Student.Age}}</td>
+                <td>{{Student.Average}}</td>
+                <td>{{Student.Grade}}</td>
+                <td>{{Student.Active}}</td>
+            </tr>
+        </ng-container>
+    </tbody>
+
+
+
+</table>

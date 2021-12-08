@@ -1,0 +1,93 @@
+<div [ngClass]="darkmodeClasses" class="container">
+  <h1 class="text-center"> Style Directive and class Directive
+     <span class="m-3">
+       <button (click)="setDarkModeClasses()" class="btn btn-primary">Dark Mode</button>
+      </span>
+    </h1>
+  <h2 [ngStyle]="{color: getColor()}" [ngClass]="{online: statuscode==='online'}">Your status is {{statuscode}}</h2>
+  <br>
+  <hr>
+
+  <h2 [ngClass]="isSpecial? 'special': '' "> This is the special line</h2>
+  <br>
+  <hr><br>
+
+  <h1 class="m-3">Class Directive</h1>
+  <div>
+    <h3>currentClasses {{currentClasses| json}}</h3>
+    <ul>
+      <li>
+        <label for="savable" class="">Savable</label>
+        <input type="checkbox" [(ngModel)]="canSave" id="savable">
+      </li>
+      <li>
+        <label for="modified" class="">Modified</label>
+        <input type="checkbox" [(ngModel)]="ischanged" id="modified">
+      </li>
+      <li>
+        <label for="special" class="">Special</label>
+        <input type="checkbox" [(ngModel)]="isSpecial" id="special">
+      </li>
+    </ul>
+  </div>
+
+  <button class="btn btn-danger m-3" (click)="setCurrentClasses()">Click Me</button>
+  <div>
+    <h3 [ngClass]="currentClasses">This line will be modified after clinking the button</h3>
+  </div>
+
+  <div>
+    <h3 class="m-3" [ngClass]="{savable: canSave==true, modified: ischanged==true,special: isSpecial==true }"> this line
+      will going to change according the check box </h3>
+  </div>
+
+  <hr>
+
+  <div>
+    <h1 class="m-3">Style Directive</h1>
+    <h3>Current Style | {{currentStyle| json}}</h3>
+
+    <ul>
+      <li>
+        <label class="">FontSize</label>
+        <input type="checkbox" [(ngModel)]="fontSize" id="savable">
+      </li>
+      <li>
+        <label class="">fontWeight</label>
+        <input type="checkbox" [(ngModel)]="fontWeight" id="modified">
+      </li>
+      <li>
+        <label class="">FontColor</label>
+        <input type="checkbox" [(ngModel)]="fontColor" id="special">
+      </li>
+    </ul>
+    <button class="btn btn-danger" (click)="setCurrentStyle()">Change Style</button>
+    <p [ngStyle]="currentStyle">This line will be going to change according checked style</p>
+  </div>
+
+  <hr>
+  <h1>Structural Directive</h1>
+
+  <h3 id="ngIf">NgIf Binding</h3>
+
+  <button class="btn btn-danger" (click)="ifprac()">Click to show</button>
+  <h3 *ngIf="istrue"> This line will be visible if the condition is true</h3>
+
+  <hr>
+  <h3 class="m-3">ngfor Binding</h3>
+  <ul>
+    <li *ngFor="let name of names">{{name}}</li>
+  </ul>
+  <button class="btn btn-danger" (click)="addname()">AddName</button>
+  <hr>
+  <h3>SwitchCase</h3>
+  <div [ngSwitch]="myvalue">
+    <div *ngSwitchCase="1">
+      <p>Thisi is first</p>
+    </div>
+    <div *ngSwitchCase="2">
+      <p>This is the second</p>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,21 @@
+.online{
+    background-color: red;
+}
+
+.special{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color:wheat;
+}
+
+.savable{
+    background-color: steelblue;
+}
+
+.modified {
+      font-weight: bolder;
+  }
+
+  .darkmode{
+      background-color: slategray;
+      color: snow;
+  }
