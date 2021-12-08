@@ -1,0 +1,31 @@
+<div>
+  <h1>{{title}}</h1>
+  <app-helloworld></app-helloworld>
+  <h4>The sum of the 1+1 is {{1+1}}</h4>
+
+
+
+  <h2>Binding the src property of an image:</h2>
+  <img [src]="imageurl">
+
+  <h2>Binding to the colSpan property</h2>
+  <table border=1>
+    <tr>
+      <td>Column 1</td>
+      <td>Column 2</td>
+    </tr>
+    <!-- Notice the colSpan property is camel case -->
+    <tr>
+      <td [colSpan]="2">Span 2 columns</td>
+    </tr>
+  </table>
+
+  <h2>Binding to a property of a directive</h2>
+  <p [ngClass]="classes">[ngClass] binding to the classes property making this blue</p>
+  <hr>
+
+  <div>
+    <app-sizer></app-sizer>
+  </div>
+
+</div>

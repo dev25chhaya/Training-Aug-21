@@ -1,0 +1,21 @@
+<h2>{{Messege}}</h2>
+
+<div>
+    <hr>
+    <h2>Property Binding</h2>
+    <br><br>
+    <input type="text" [disabled]='isDisabled' [value]='myname'>
+    <br><br>
+    <input type="text" [disabled]='isDisabled' [value]='surname'>
+    <br><br>
+    <button (click)='OnClick()' type="submit">Click Me</button>
+</div>
+
+<hr>
+
+<div>
+    <h2>Event Binding</h2>
+    <button type="button" (click)="ShowAlert(' ( and this is the parameter )')" [disabled]='isDisabled'>Click here</button>
+    <hr> 
+</div>
+
