@@ -1,0 +1,18 @@
+<div>
+    <h1>Calc Component</h1>
+    <br>
+        <h1>
+          Addition
+        </h1>
+        <label >First Number: </label><br><br>
+        <input class="form-control" type="number" [(ngModel)]='firstVal'>
+        <br><br>
+        <label >Second Number: </label><br><br>
+        <input type="number" [(ngModel)]='secondVal'>
+        <br><br>
+        <button class="btn btn-primary" (click)="add()">Addition</button><br><br>
+        <button class="btn btn-secondary" (click)="sub()">Substraction</button><br><br>
+        <button (click)="mul()">Multiplication</button><br><br>
+        <h1>Result: {{res}}</h1>
+        
+</div>
