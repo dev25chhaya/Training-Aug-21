@@ -1,0 +1,15 @@
+<div class="border border-secondary p-4 mt-3">
+    <h1 class="display-4 fw-bold mt-3"> Rectangle Component </h1>
+
+    <label for="length" class="h4 fw-bold mt-3">Length</label>
+    <input type="number" class="form-control mt-3 w-50" [(ngModel)]="length">
+
+    <label for="width" class="h4 fw-bold mt-3">width</label>
+    <input type="number" class="form-control mt-3 w-50" [(ngModel)]="width">
+
+    <button class="btn btn-primary mt-3 me-3" (click)="findArea()">Area</button>
+    <button class="btn btn-primary mt-3" (click)="clear()">Clear</button>
+
+    <div class="m-3 fw-bolder h2">{{area}}</div>
+
+</div>

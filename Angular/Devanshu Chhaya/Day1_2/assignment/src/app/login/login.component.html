@@ -1,0 +1,10 @@
+
+<div class="border border-secondary p-4">
+    <h1 class="display-4 fw-bold mt-3"> LogIn </h1>
+    <label for="username" class="h4 fw-bold mt-3">UserName: </label>
+    <input type="text" [(ngModel)]="username" class="form-control  mt-3">
+    
+    <label for="password" class="h4 fw-bold mt-3" >Password: </label>
+    <input type="password" [(ngModel)]="password" class="form-control mt-3">
+    <button (click)="login()" class="btn btn-primary mt-3">Login</button>
+</div>
