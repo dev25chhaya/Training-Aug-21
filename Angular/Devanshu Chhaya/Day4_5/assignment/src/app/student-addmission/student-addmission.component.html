@@ -1,0 +1,248 @@
+<form [formGroup]="addmissionForm" (ngSubmit)="onSubmit()">
+    
+    <div formGroupName="Name">
+        <div class="row m-4">
+            <div class="col-4">
+                <label for="firstName" class="form-label">First Name</label>
+                <input type="text" id="firstName" class="form-control" formControlName="firstName">
+                
+            </div>
+            <div class="col-4">
+                <label for="middleName" class="form-label">Middel Name</label>
+                <input type="text" id="middelName" class="form-control" formControlName="middleName">            
+            </div>
+            <div class="col-4">
+                <label for="lastName" class="form-label">Last Name</label>
+                <input type="text" id="lastName" class="form-control" formControlName="lastName">
+            </div>
+        </div>
+        <span class="help-block ms-5" *ngIf="stufName?.invalid && stufName?.touched">All Name fields are required</span>
+    </div>
+
+    <div formGroupName="birthInfo">
+        <div class="row m-4">
+            <div class="col-4">
+                <label class="form-label" for="dob">DOB</label>
+                <input class="form-control" id="dob" type="date" formControlName="dob">        
+            </div>
+            <div class="col-4">
+                <label class="form-label" for="palce">Place of Birth</label>
+                <input class="form-control" id="place" type="text" formControlName="placeofbirth">                        
+            </div>
+            <div class="col-4">
+                <label class="form-label" for="flang">Firtst Language</label>
+                <input class="form-control" id="flang" type="text" formControlName="firstLanguage">                
+            </div>
+        </div>
+        <span class="help-block ms-5" *ngIf="birthInfo?.invalid && birthInfo?.touched">All three fields are required</span>
+            
+    </div>
+
+    <div formGroupName="address">
+        <h2 class="m-4">Address</h2>
+    
+        <div class="row m-4">
+            
+            <div class="col-4">
+                <label for="city" class="form-label">City: </label>
+                <input id="city" class="form-control" type="text" formControlName="city">        
+            </div>
+            <div class="col-4">
+                <label for="state" class="form-label">State: </label>
+                <input id="state" class="form-control" type="text" formControlName="state">                        
+            </div>
+        </div>
+
+        <div class="row m-4">
+            <div class="col-4">
+                <label for="country" class="form-label">Country: </label>
+                <input id="country" class="form-control" type="text" formControlName="country">        
+            </div>
+            <div class="col-4">
+                <label for="pin" class="form-label">Pin Code: </label>
+                <input id="pin" class="form-control" type="number" formControlName="pin">        
+            </div>
+        </div>
+        <span class="help-block ms-5" *ngIf="address?.invalid && address?.touched">All fields related to address are required</span>
+    </div>
+
+    <div formGroupName="father">
+        <h2 class="m-4">Father Details</h2>
+        <div class="row m-4">
+            <div class="col-4">
+                <label for="firstName" class="form-label">FirstName</label>
+                <input id="firstName" class="form-control" type="text" formControlName="firstName">        
+            </div>
+            <div class="col-4">
+                <label for="middleName" class="form-label">Middle Name</label>
+                <input id="middleName" class="form-control" type="text" formControlName="middleName">        
+            </div>
+            <div class="col-4">
+                <label for="lastName" class="form-label">Last Name</label>
+                <input id="lastName" class="form-control" type="text" formControlName="lastName">        
+            </div>
+        </div>
+
+        <div class="row m-4">
+            <div class="col-6">
+                <label for="email" class="form-label">EmailID</label>
+                <input id="email" class="form-control" type="email" formControlName="email">        
+            </div>
+            <div class="col-6">
+                <label for="phoneNumber" class="form-label">Phone Number</label>
+                <input id="phoneNumber" class="form-control" type="" formControlName="phoneNumber">        
+            </div>
+        </div>
+
+        <div class="row m-4">
+            <div class="col-12">
+                <label for="eduqua" class="form-label">Education Qualification</label>
+                <input id="eduqua" class="form-control" type="text" formControlName="educationalQualification">    
+            </div>
+        </div>
+        
+        <div class="row m-4">
+            <div class="col-6">
+                <label for="profession" class="form-label">Profession</label>
+                <input id="profession" class="form-control" type="text" formControlName="profession">        
+            </div>
+            <div class="col-6">
+                <label for="designation" class="form-label">Designation</label>
+                <input id="designation" class="form-control" type="text" formControlName="designation">        
+            </div>
+        </div>
+
+        <span class="help-block ms-5" *ngIf="fatherInfo?.invalid && fatherInfo?.touched">All fields of Father details are required</span>
+            
+    </div>
+
+    <div formGroupName="mother">
+        <h2 class="m-4">Mother Details</h2>
+        <div class="row m-4">
+            <div class="col-4">
+                <label for="firstName" class="form-label">FirstName</label>
+                <input id="firstName" class="form-control" type="text" formControlName="firstName">        
+            </div>
+            <div class="col-4">
+                <label for="middleName" class="form-label">Middle Name</label>
+                <input id="middleName" class="form-control" type="text" formControlName="middleName">        
+            </div>
+            <div class="col-4">
+                <label for="lastName" class="form-label">Last Name</label>
+                <input id="lastName" class="form-control" type="text" formControlName="lastName">        
+            </div>
+        </div>
+
+        <div class="row m-4">
+            <div class="col-6">
+                <label for="email" class="form-label">EmailID</label>
+                <input id="email" class="form-control" type="email" formControlName="email">        
+            </div>
+            <div class="col-6">
+                <label for="phoneNumber" class="form-label">Phone Number</label>
+                <input id="phoneNumber" class="form-control" type="" formControlName="phoneNumber">        
+            </div>
+        </div>
+
+        <div class="row m-4">
+            <div class="col-12">
+                <label for="eduqua" class="form-label">Education Qualification</label>
+                <input id="eduqua" class="form-control" type="text" formControlName="educationalQualification">    
+            </div>
+        </div>
+        
+        <div class="row m-4">
+            <div class="col-6">
+                <label for="profession" class="form-label">Profession</label>
+                <input id="profession" class="form-control" type="text" formControlName="profession">        
+            </div>
+            <div class="col-6">
+                <label for="designation" class="form-label">Designation</label>
+                <input id="designation" class="form-control" type="text" formControlName="designation">        
+            </div>
+        </div>
+        <span class="help-block ms-5" *ngIf="motherInfo?.invalid && motherInfo?.touched">All fields are required of Mother details</span>
+            
+    </div>
+
+    <div formArrayName="emergencyContectList">
+        <h2 class="m-4">Relatives Information</h2>
+        <div *ngFor="let relative of emergencyContectList.controls, let i=index">
+            <div [formGroupName]="i">
+                <div class="row m-4">
+                    <div class="col-6">
+                        <label class="form-label" for="relative.relation-{{i}}">Relation{{i}}</label>
+                        <input class="form-control" id="relative.relation-{{i}}" formControlName="relation">
+                    </div>
+                    <div class="col-6">
+                        <label class="form-label" for="relative.phoneNumber-{{i}}">phoneNumber</label>
+                        <input class="form-control" id="relative.phoneNumber-{{i}}" formControlName="phoneNumber">        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <span class="help-block ms-5" *ngIf="emergencyCon?.invalid && emergencyCon?.touched">Both the fields are required</span>
+        </div>
+             
+        <button class="btn btn-danger m-4" type="button" (click)="addrelative()">Add One Relative</button>
+    </div>
+    <div class="row m-4">
+        <div class="col-12">
+            <label class="form-label">Reference Through:</label>
+            <input type="text" class="form-control" formControlName="referenceThrough">
+            
+        </div> 
+    </div>
+    <div class="row m-4">
+        <div class="col-12"> 
+            <label class="form-label">Address</label>
+            <textarea class="form-control" formControlName="add"></textarea>
+            
+       </div> 
+    </div>
+    <div class="row m-4">
+        <div class="col-4"> 
+            <label class="form-label">Phone</label>
+            <input type="number" class="form-control" formControlName="phoneNum">
+       </div> 
+    </div>
+    <button type="submit" class="btn btn-primary m-3" [disabled]="!addmissionForm.valid">Submit</button>
+   
+</form>
+
+<p>{{addmissionForm.status}}</p>
+
+
+
+<table class="table me-3" style="color: beige;">
+    <thead>
+        <tr>
+            <th class="scope">FirstName</th>
+            <th>MiddleName</th>
+            <th>lastName</th>
+            <th>DateOfBirth</th>
+            <th>PlaceOfBirth</th>
+            <th>First Language</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Country</th>
+            <th>Pin</th>
+        </tr>
+
+    </thead>
+    <tbody *ngFor="let Student of students">
+        <tr>
+            <td>{{Student.Name.firstName}}</td>
+            <td>{{Student.Name.middleName}}</td>
+            <td>{{Student.Name.lastName}}</td>
+            <td>{{Student.birthInfo.dob}}</td>
+            <td>{{Student.birthInfo.placeofbirth}}</td>
+            <td>{{Student.birthInfo.firstLanguage}}</td>
+            <td>{{Student.address.city}}</td>
+            <td>{{Student.address.state}}</td>
+            <td>{{Student.address.country}}</td>
+            <td>{{Student.address.pin}}</td>
+        </tr>
+    </tbody>
+</table>    
