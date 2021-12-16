@@ -1,0 +1,37 @@
+<div class="container w-25">
+  <div class="text-center text-primary fw-bolder display-4 m-4">Student Info</div>
+  <app-student (stuEvent)="addStudent($event)"></app-student>
+  <!-- <div class="m-4">
+    <h4>Student</h4>
+    <p>{{student.firstName}}</p>
+    <p>{{student.lastName}}</p>
+    <p>{{student.standard}}</p>
+    <p>{{student.dob}}</p>
+  </div> -->
+  <h3>Student</h3>
+  <!-- <div class="m-3" > -->
+  <table class="table">
+    <thead>
+      <tr>
+        <td>FirstName</td>
+        <td>LastName</td>
+        <td>Standard</td>
+        <td>Dob</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let stu of students">
+        <td>{{stu.firstName}}</td>
+        <td>{{stu.lastName}}</td>
+        <td>{{stu.standard}}</td>
+        <td>{{stu.dob}}</td>
+      </tr>
+    </tbody>
+  </table>      
+    <!-- <p>{{stu.firstName}}</p>
+    <p>{{stu.lastName}}</p>
+    <p>{{stu.standard}}</p>
+    <p>{{stu.dob}}</p>
+  </div> -->
+  <app-student-list [studentData]="students"></app-student-list>
+</div>

@@ -1,0 +1,7 @@
+<p>
+    The value is: {{item}}
+</p>
+
+<label for="output">Add an item:</label>
+<input type="text" id="output" #newitem>
+<button (click)="addNewItem(newitem.value)">Click to pass to parent</button>

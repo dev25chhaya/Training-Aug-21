@@ -1,0 +1,12 @@
+<form (ngSubmit)="onSubmit(f.value)" #f="ngForm">
+        <label class="form-label">Firstname</label>
+        <input class="form-control" type="text" ngModel name="firstName" required>
+        <label class="form-label">Lastname</label>
+        <input class="form-control" type="text" ngModel name="lastName" required>
+
+        <label class="form-label">Standard</label>
+        <input class="form-control" type="text" ngModel name="standard" required>
+        <label class="form-label">DateOf Birth</label>
+        <input class="form-control" type="date" ngModel name="dob" required>
+        <button class="btn btn-danger m-4" type="submit" [disabled]="!f.valid">Submit</button>        
+</form>
