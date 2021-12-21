@@ -1,0 +1,46 @@
+article{
+    background-color:rgb(213, 217, 228) ;
+    color:black;
+    padding:40px;
+    margin:100px;
+    border-style: solid;
+}
+
+#intro{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    display: inline;
+}
+
+table{
+    text-align: center;
+}
+
+
+#profooter{
+    font-style: italic;
+    font-size: small;
+
+}
+
+.projects{
+    border-style:hidden;
+    padding: 5px;
+}
+.sectiontitle{
+    color:navy;
+    font-family: cursive;
+    
+}
+#introhader{
+    display: inline;
+}
+
+img{
+    float: right;
+    width: 100px;
+    height: 100px;
+}
+#video{
+   margin:0px 0px 0px 30%;
+   border: normal solid black
+}
