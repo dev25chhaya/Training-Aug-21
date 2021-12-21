@@ -1,0 +1,88 @@
+<div class="container">
+    <div class="row align-items-cente justify-content-center">
+        <div class="col-4">
+            <form>
+                <div class="mb-3">
+                    <label for="number1" class="form-label">Enter the Number 1</label>
+                    <input type="number" class="form-control" id="number1">
+                </div>
+                <div class="mb-3">
+                    <label for="number2" class="form-label">Enter the Number 1</label>
+                    <input type="number" class="form-control" id="number2">
+                </div>
+            </form>
+        </div>
+        <div class="col-4">
+            <div class="form-check">
+
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="Sum">
+                <label class="form-check-label" for="flexRadioDefault1">
+                    Sum
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="Dif">
+                <label class="form-check-label" for="flexRadioDefault2">
+                    Difference
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="Mul">
+                <label class="form-check-label" for="flexRadioDefault2">
+                    Multiplication
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="Div">
+                <label class="form-check-label" for="flexRadioDefault2">
+                    Division
+                </label>
+            </div><br>
+            <ul class="list-inline">
+                <li class="list-inline-item"><button class="btn btn-primary block"
+                        onclick="calculate(number1.value,number2.value,result)">Calculate</button></li>
+                <li class="list-inline-item"><button class="btn btn-primary block" onclick="reset()">Reset</button></li>
+            </ul>
+            <p>Result: <span id="result"></span></p>
+        </div>
+    </div>
+</div>
+
+<script>
+    function calculate(num1, num2, result) {
+
+            num1 = parseInt(num1);
+            num2 = parseInt(num2);
+
+
+            switch (true) {
+                case document.getElementById('Sum').checked == true:
+                    result.innerHTML = num1 + num2;
+                    break;
+
+                case document.getElementById('Dif').checked == true:
+                    result.innerHTML = num1 - num2;
+                    break;
+
+                case document.getElementById('Mul').checked == true:
+                    result.innerHTML = num1 * num2;
+                    break;
+
+                case document.getElementById('Div').checked == true:
+                    result.innerHTML = num1 / num2;
+                    break;
+
+            }
+
+        }
+
+        function reset(){
+            document.getElementById("number1").value=null;
+            document.getElementById("number2").value=null;
+            document.getElementById("Sum").checked=false;
+            document.getElementById("Dif").checked=false;
+            document.getElementById("Mul").checked=false;
+            document.getElementById("Div").checked=false;
+            
+        }
+</script>
