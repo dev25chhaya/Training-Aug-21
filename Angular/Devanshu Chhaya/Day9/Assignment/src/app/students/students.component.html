@@ -1,0 +1,51 @@
+<table class="table">
+    <thead>
+        <tr>
+            <td>RollNumber</td>
+            <td>Name</td>
+            <td>Standard</td>
+            <td></td>
+        </tr>
+    </thead>
+    <tbody *ngFor="let stu of students">
+        <tr>
+            <td>{{stu.rollNumber}}</td>
+            <td>{{stu.name}}</td>
+            <td>{{stu.standard}}</td>
+            <td><button class="btn btn-outline-primary" (click)="updateStudent(stu.rollNumber,stu.name,stu.standard)">Update</button>
+                <button class="btn btn-outline-dark ms-3" (click)="deleteStudent(stu.rollNumber)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<form *ngIf="isActive">
+    <label class="form-label">RollNumber</label>
+    <input name="roll" class="form-control" [(ngModel)]="stu.rollNumber" type="number">
+    <label class="form-label">Name</label>
+    <input name="name" class="form-control" [(ngModel)]="stu.name" type="text">
+    <label class="form-label">Standard</label>
+    <input name="std" class="form-control" [(ngModel)]="stu.standard" type="text">
+    <br>
+<button class="btn btn-outline-danger" (click)="updateStudent(stu.rollNumber,stu.name,stu.standard)">update</button>
+    
+</form>
+
+
+<button class="btn btn-primary mt-5" (click)="toggle()">Add New Student</button>
+
+
+<br>
+<!-- <button class="btn btn-outline-danger mt-4" (click)="updateStudent()">Update Student</button> -->
+<br>
+<!-- <button class="btn btn-outline-danger mt-4" (click)="deleteStudent()">Delete Student</button> -->
+<form (ngSubmit)="addStudent(f.value)" *ngIf="isAdding" #f="ngForm">
+    <label class="form-label">RollNumber</label>
+    <input class="form-control" type="number" ngModel name="rollNumber" required>
+    <label class="form-label">Name</label>
+    <input class="form-control" type="text" ngModel name="name" required>
+
+    <label class="form-label">Standard</label>
+    <input class="form-control" type="number" ngModel name="standard" required>
+    <button class="btn btn-danger m-4" type="submit" [disabled]="!f.valid">Submit</button>        
+</form>
